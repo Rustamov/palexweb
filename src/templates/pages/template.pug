@@ -1,0 +1,11 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = "Main page"
+	- const bodyClass = "home-body"
+
+block content
+	main.main
+		.container
+			p main-page

@@ -1,0 +1,49 @@
+include _includes
+block variables
+
+doctype html
+html(lang="ru")
+	head
+		meta(charset='UTF-8')
+		meta(http-equiv='x-ua-compatible' content='ie=edge')
+		title Создание и продвижение сайтов в Москве.
+		//- meta(name='csrf-param' content='_csrf')
+		//- meta(name='csrf-token' content='PM-YFtjvU99ATzzy7QUhwnvuML3y4Npt8g5fpUPPxkV0oOFVqtsgqXIVXp-sX3e4HqJ98ZePrxWrb2nDG6C1Ag==')
+		meta(name='viewport' content='width=device-width, initial-scale=1.0')
+		meta(content='telephone=no' name='format-detection')
+		meta(name='HandheldFriendly' content='true')
+		script.
+			(function(H){H.className=H.className.replace(/\\bno-js\b/,'js')})(document.documentElement)
+
+
+		meta(property='og:title' content='Создание и продвижение сайтов в Москве.')
+		meta(property='og:site_name' content='Web Palex')
+		meta(property='og:url' content='https://palexweb.ru/')
+		meta(property='og:type' content='article')
+		meta(property='og:locale' content='ru')
+		meta(property='og:description' content='Создание и продвижение сайтов ► Комплексная поддержка и разработка сайтов в Москве ► Веб агентство «Palex Web»: Онлайн заказ! Полезный блог! Отзывы клиентов! Узнать цены! ☎ +7(977)544-30-51')
+		meta(name='description' content='Создание и продвижение сайтов ► Комплексная поддержка и разработка сайтов в Москве ► Веб агентство «Palex Web»: Онлайн заказ! Полезный блог! Отзывы клиентов! Узнать цены! ☎ +7(977)544-30-51')
+		meta(name='keywords' content='Веб студия москва, веб компания, создание и продвижение сайтов, разработка и продвижение сайтов, создание и раскрутка сайтов, услуги веб студии')
+
+		
+		link(rel="preconnect" href="https://fonts.gstatic.com")
+		link(href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet")
+
+		link(href='/static/css/main.min.css?v=1568619865' rel='stylesheet')
+		link(href='https://palexweb.ru/js/popup/magnific-popup.css?v=1560794094' rel='stylesheet')
+		link(href='https://palexweb.ru/css/frontend/application.css?v=1601480898' rel='stylesheet')
+		link(href='https://palexweb.ru/lib/alert/alertify.css?v=1560794094' rel='stylesheet')
+		link(href='https://palexweb.ru/lib/submit-loader/ladda-themeless.css?v=1560794094' rel='stylesheet')
+
+		
+		link(rel="stylesheet" href="css/styles.css")
+	body(class=bodyClass)
+		div.wrapper
+			include ../blocks/header.pug
+			block content
+			include ../blocks/footer.pug
+
+
+		block scripts
+			script(src="js/scripts.js")
+

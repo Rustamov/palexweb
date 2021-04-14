@@ -1,0 +1,863 @@
+extends ../layouts/default
+include ../helpers/mixins
+
+block variables
+	- const title = "Main page"
+	- const bodyClass = "home-body"
+
+block content
+	section#home.home
+		.steeps.steeps-home.steeps-dark
+			.steeps-line__top.steeps-line
+			ul.steeps-list
+				li.active
+					a(href='#home') 01
+				li
+					a(href='#want') 02
+				li
+					a(href='#discount') 03
+				li
+					a(href='#services') 04
+				li
+					a(href='#about') 05
+				li
+					a(href='#example') 06
+				li
+					a(href='#call') 07
+			.steeps-line__bottom.steeps-line
+		.home-top
+			.container
+				.row
+					.col-12
+						.h1
+							span Studio  
+							| Palex Web
+						p Создание и продвижение сайтов любой сложности
+		.home-bottom
+			.container
+				.row
+					.col-lg-4.col-sm-6.col-12
+						.home-bottom__item
+							.home-item__icon
+								.hexagon.hexagon-color
+									svg.svgicon(width='26' height='24')
+										use(xlink:href='#man')
+							.home-item__title Индивидуальный подход
+							.home-item__subtitle К каждому проекту
+					.col-lg-4.col-sm-6.col-12
+						.home-bottom__item
+							.home-item__icon
+								.hexagon.hexagon-color
+									svg.svgicon(width='17' height='25')
+										use(xlink:href='#media')
+							.home-item__title Адаптация
+							.home-item__subtitle Под любые изменения и алгоритмы
+	section#want.want
+		#scene1.scene
+			.scene-double(data-depth='0.4')
+			.scene-small(data-depth='0.6')
+			.scene-simple(data-depth='0.8')
+			.scene-small(data-depth='0.2')
+			.scene-double(data-depth='0.1')
+			.scene-simple(data-depth='0.9')
+		.steeps
+			.steeps-line__top.steeps-line
+			ul.steeps-list
+				li
+					a(href='#home') 01
+				li.active
+					a(href='#want') 02
+				li
+					a(href='#discount') 03
+				li
+					a(href='#services') 04
+				li
+					a(href='#about') 05
+				li
+					a(href='#example') 06
+				li
+					a(href='#call') 07
+			.steeps-line__bottom.steeps-line
+		.container
+			.title
+				.h2 Хотите узнать больше информации?
+				p Оставьте заявку и мы свяжемся с Вами в ближайшее время
+				.title-triangle
+					img(src='https://palexweb.ru/static/img/assets/header/triangle.png')
+			.row.want-row
+				.col-lg-6.col-12
+					.want-form
+						.want-form__content
+							.form-title Создание сайта или редизайн
+							.form-subtitle Оставте заявку и мы свяжемся с Вами в ближайшее время
+							form#js-feedback-form-create.contact-form.form-feedback(action='/contact/default/send' method='post')
+								input(type='hidden' name='_csrf' value='PM-YFtjvU99ATzzy7QUhwnvuML3y4Npt8g5fpUPPxkV0oOFVqtsgqXIVXp-sX3e4HqJ98ZePrxWrb2nDG6C1Ag==')
+								.form-group.field-feedbackform-form_name
+									input#feedbackform-form_name.form-control(type='hidden' name='FeedbackForm[form_name]' value='Создание сайта или редизайн')
+									.help-block
+								.form-group.field-check
+									input#check.form-control(type='hidden' name='FeedbackForm[check]' value='')
+									.help-block
+								.form-row
+									.form-group.field-form-name.required
+										label.form-name(for='form-name')
+											i.material-icons.cl-accent person
+											| Ваше имя:
+										input#form-name.label-controll(type='text' name='FeedbackForm[name]' aria-required='true')
+										.help-block
+									.form-group.field-form-phone.required
+										label.form-name(for='form-phone')
+											i.material-icons.cl-accent phone
+											| Ваш телефон:
+										input#form-phone.label-controll(type='tel' name='FeedbackForm[phone]' aria-required='true')
+										.help-block
+								.form-row
+									.form-group
+										.form-check
+											input#create_site(type='radio' name='FeedbackForm[create]' value='Создание')
+											label(for='create_site') Создание
+										.form-check
+											input#redesign(type='radio' name='FeedbackForm[create]' value='Редизайн')
+											label(for='redesign') Редизайн
+									.form-group.field-form-mail
+										label.form-mail(for='form-mail')
+											i.material-icons.cl-accent mail
+											| Ваш email:
+										input#form-mail.label-controll(type='email' name='FeedbackForm[email]')
+										.help-block
+								.form-row.single
+									.form-group
+										label.form-comment(for='form-comment')
+											i.material-icons.cl-accent chat_bubble
+											span Ваш комментарий:
+										textarea#form-comment.label-controll(name='FeedbackForm[body]')
+								.form-group.field-feedbackform-accept.required
+									.form-check
+										input#feedbackform-accept.form-check(type='checkbox' name='FeedbackForm[accept]' checked='' aria-required='true')
+										label.control-label(for='feedbackform-accept') Согласен с политикой конфиденциальности
+									.help-block
+								.form-row.center
+									button.ladda-button.sendFeedbackForm.button-wrapper(type='submit' data-style='slide-right' onclick="document.getElementById('check').value = 'nospam';")
+										.button.hoverblue
+											span Отправить
+				.col-lg-6.col-12
+					.want-form.want-form__promotion
+						.want-form__content
+							.form-title Продвижение сайта
+							.form-subtitle Оставте заявку и мы свяжемся с Вами в ближайшее время
+							form#js-feedback-form-redesign.contact-form.form-feedback(action='/contact/default/send' method='post')
+								input(type='hidden' name='_csrf' value='PM-YFtjvU99ATzzy7QUhwnvuML3y4Npt8g5fpUPPxkV0oOFVqtsgqXIVXp-sX3e4HqJ98ZePrxWrb2nDG6C1Ag==')
+								.form-group.field-feedbackform-form_name
+									input#feedbackform-form_name.form-control(type='hidden' name='FeedbackForm[form_name]' value='Продвижение сайта')
+									.help-block
+								.form-row
+									.form-group.field-form-name__promotion.required
+										label.form-name(for='form-name__promotion')
+											i.material-icons.cl-accent person
+											| Ваше имя:
+										input#form-name__promotion.label-controll(type='text' name='FeedbackForm[name]' aria-required='true')
+										.help-block
+									.form-group.field-form-phone__promotion.required
+										label.form-phone(for='form-phone__promotion')
+											i.material-icons.cl-accent phone
+											| Ваш телефон:
+										input#form-phone__promotion.label-controll(type='tel' name='FeedbackForm[phone]' aria-required='true')
+										.help-block
+								.form-row
+									.form-group.field-form-address
+										label.form-address(for='form-address')
+											i.material-icons.cl-accent home
+											| Адрес сайта:
+										input#form-address.label-controll(type='text' name='FeedbackForm[site]')
+										.help-block
+									.form-group.field-form-mail__promotion
+										label.form-mail(for='form-mail__promotion')
+											i.material-icons.cl-accent mail
+											| Ваш email:
+										input#form-mail__promotion.label-controll(type='text' name='FeedbackForm[email]')
+										.help-block
+								.form-row.single
+									.form-group
+										label.form-comment(for='form-comment__promotion')
+											i.material-icons.cl-accent chat_bubble
+											span Ваш комментарий:
+										textarea#form-comment__promotion.label-controll(name='FeedbackForm[body]')
+								.form-group.field-ff6.required
+									.form-check
+										input#ff6.form-check(type='checkbox' name='FeedbackForm[accept]' checked='' aria-required='true')
+										label.control-label(for='ff6') Согласен с политикой конфиденциальности
+									.help-block
+								.form-row.center
+									button.ladda-button.button-wrapper(type='submit' data-style='slide-right')
+										.button.hoverblue
+											span Отправить
+	section#discount.discount
+		.steeps.steeps-dark
+			.steeps-line__top.steeps-line
+			ul.steeps-list
+				li
+					a(href='#home') 01
+				li
+					a(href='#want') 02
+				li.active
+					a(href='#discount') 03
+				li
+					a(href='#services') 04
+				li
+					a(href='#about') 05
+				li
+					a(href='#example') 06
+				li
+					a(href='#call') 07
+			.steeps-line__bottom.steeps-line
+		.container
+			.title.wh
+				.h2 При заказе создания и продвижения сайта
+				.title-triangle
+					img(src='https://palexweb.ru/static/img/assets/header/triangle.png')
+			.row
+				.col-lg-5.col-12
+					.discount-left
+						.h3 Скидка на всё
+						.discount-price
+							span 10%
+						.discount-article
+							.discount-article__title
+								.h4
+									| При подписании сразу 2-х договоров, на создание и продвижение, предоставляется скидка на все до 10%
+								p
+				.col-lg-6.offset-lg-1.col-12
+					.want-form.discount-form
+						.want-form__content
+							.form-title Продвижение сайта
+							.form-subtitle Оставте заявку и мы свяжемся с Вами в ближайшее время
+							form#js-feedback-form-redesign2.contact-form.form-feedback(action='/contact/default/send' method='post')
+								input(type='hidden' name='_csrf' value='PM-YFtjvU99ATzzy7QUhwnvuML3y4Npt8g5fpUPPxkV0oOFVqtsgqXIVXp-sX3e4HqJ98ZePrxWrb2nDG6C1Ag==')
+								.form-group.field-feedbackform-form_name
+									input#feedbackform-form_name.form-control(type='hidden' name='FeedbackForm[form_name]' value='Продвижение сайта')
+									.help-block
+								.form-row
+									.form-group.field-form-name__discount.required
+										label.form-name(for='form-name__discount')
+											i.material-icons.cl-accent person
+											| Ваше имя:
+										input#form-name__discount.label-controll(type='text' name='FeedbackForm[name]' aria-required='true')
+										.help-block
+									.form-group.field-form-phone__discount.required
+										label.form-name(for='form-phone__discount')
+											i.material-icons.cl-accent phone
+											| Ваш телефон:
+										input#form-phone__discount.label-controll(type='tel' name='FeedbackForm[phone]' aria-required='true')
+										.help-block
+								.form-row.single
+									.form-group.field-form-mail__discount
+										label.form-mail(for='form-mail__discount')
+											i.material-icons.cl-accent mail
+											| Ваш email:
+										input#form-mail__discount.label-controll(type='text' name='FeedbackForm[email]')
+										.help-block
+								.form-row.single
+									.form-group
+										label.form-comment(for='form-comment__discount')
+											i.material-icons.cl-accent chat_bubble
+											span Ваш комментарий:
+										textarea#form-comment__discount.label-controll(name='FeedbackForm[body]')
+								.form-group.field-ff7.required
+									.form-check
+										input#ff7.form-check(type='checkbox' name='FeedbackForm[accept]' checked='' aria-required='true')
+										label.control-label(for='ff7') Согласен с политикой конфиденциальности
+									.help-block
+								.form-row.center
+									button.ladda-button.button-wrapper(type='submit' data-style='slide-right')
+										.button.hoverblue
+											span Отправить
+	section#services.services
+		#scene2.scene
+			.scene-double(data-depth='0.4')
+			.scene-small(data-depth='0.6')
+			.scene-simple(data-depth='0.8')
+			.scene-small(data-depth='0.2')
+			.scene-double(data-depth='0.1')
+			.scene-simple(data-depth='0.9')
+		.steeps
+			.steeps-line__top.steeps-line
+			ul.steeps-list
+				li
+					a(href='#home') 01
+				li
+					a(href='#want') 02
+				li
+					a(href='#discount') 03
+				li.active
+					a(href='#services') 04
+				li
+					a(href='#about') 05
+				li
+					a(href='#example') 06
+				li
+					a(href='#call') 07
+		.container
+			.title
+				.h2 Перечень услуг которые мы предлагаем
+				.title-triangle
+					img(src='https://palexweb.ru/static/img/assets/header/triangle.png')
+			.row.services-row
+				.col-lg-4.col-12
+					.services-item
+						.services-item__content
+							.services-item__icon
+								.hexagon.hexagon-big
+									svg.svgicon(width='69' height='64')
+										use(xlink:href='#s3')
+							.services-item__title Контекстная реклама
+							ul.services-item__list
+								li Анализ ниши и конкурентов
+								li Сбор семантики
+								li Написание объявлений
+								li Раставление ставок
+								li Выбор стратегии
+								li Настройка РСЯ
+								li Анализ рабочего аккаунта
+								li Внесение корректировок
+							.services-item__price
+								span От
+								span
+									| 6 000
+									span.price-symbol
+								span руб.
+							.services-item__button
+								a.button-wrapper.popup-with-move-anim(href='#feedback-popup' data-message='Заказать пакет услуг - Контекстная реклама')
+									.button.command
+										span Заказать пакет услуг 
+				.col-lg-4.col-12
+					.services-item
+						.services-item__content
+							.services-item__icon
+								.hexagon.hexagon-big
+									svg.svgicon(width='60' height='64')
+										use(xlink:href='#s2')
+							.services-item__title Создание сайтов. Редизайн
+							ul.services-item__list
+								li Анализ ниши и конкурентов
+								li Сбор информации с заказчика
+								li Создание прототипов
+								li Создание уникального дизайна
+								li Адаптивная верстка
+								li Программирование всех модулей
+								li Интеграции со сторонними ресурсами
+								li Обучение заказчика
+								li Наполнение
+								li Перенос на боевой домен
+							.services-item__price
+								span От
+								span
+									| 40 000
+									span.price-symbol
+								span руб.
+							.services-item__button
+								a.button-wrapper.popup-with-move-anim(href='#feedback-popup' data-message='Заказать пакет услуг - Создание сайтов. Редизайн')
+									.button.command
+										span Заказать пакет услуг 
+				.col-lg-4.col-12
+					.services-item
+						.services-item__content
+							.services-item__icon
+								.hexagon.hexagon-big
+									svg.svgicon(width='68' height='73')
+										use(xlink:href='#s1')
+							.services-item__title Seo продвижение
+							ul.services-item__list
+								li Аудит сайта - выявление ошибок
+								li Сбор семантического ядра
+								li Анализ конкурентов
+								li Исправление ошибок
+								li Внутренняя оптимизация
+								li Рерайт статей написание новых
+								li Оптимизации скорости загрузки
+								li Анализ поведения посетителя
+								li Рекомендации по юзабилити
+							.services-item__price
+								span От
+								span
+									| 25 000
+									span.price-symbol
+								span руб.
+							.services-item__button
+								a.button-wrapper.popup-with-move-anim(href='#feedback-popup' data-message='Заказать пакет услуг - Seo продвижение')
+									.button.command
+										span Заказать пакет услуг 
+			.row
+				.col-12
+					.services-action
+						.services-action__left
+						.services-action__center
+							.services-center__text
+								span Закажи директ и seo 
+								| и получи ведение инстаграмма 
+								span бесплатно на весь срок 
+								| оказания услуг.
+							.services-center__button
+								a.button-wrapper.popup-with-move-anim(href='#feedback-popup' data-message='Закажи директ и seo и получи ведение инстаграмма бесплатно на весь срок оказания услуг.')
+									.button.white.hoverblue
+										span Заказать 
+						.services-action__right
+	section#about.about
+		.steeps.steeps-dark
+			.steeps-line__top.steeps-line
+			ul.steeps-list
+				li
+					a(href='#home') 01
+				li
+					a(href='#want') 02
+				li
+					a(href='#discount') 03
+				li
+					a(href='#services') 04
+				li.active
+					a(href='#about') 05
+				li
+					a(href='#example') 06
+				li
+					a(href='#call') 07
+			.steeps-line__bottom.steeps-line
+		.container
+			.title.wh
+				.h2 Немного о нас и наши плюсы
+				.title-triangle
+					img(src='https://palexweb.ru/static/img/assets/header/triangle.png')
+			.row
+				.col-lg-6.col-12
+					.h3 Palex Web Studio
+					p
+						| Это 
+						span погружённость в бизнес наших клиентов. 
+						| Для нашей компании очень важно 
+						span понять Ваш бизнес  
+						| его сильные и слабые стороны. Неважно какая ниша и сколько клиентов у нас из данной тематике, первое с чего начинается
+						| 						любая работа это анализ:
+					ul.triangle-list
+						li Ваших конкурентов
+						li Выдачи по ключевым фразам посадочных страниц
+						li Спецпредложения конкурентов
+						li УТП
+						li Работа с юзабилити
+					p
+						| Мы не разделяем продвижение и удобство сайта, так как поведенческий фактор на сегодняшний день является одним из основных алгоритмов Яндекса. По этому 
+						span все необходимые доработки уже входят в seo работы. 
+						| Никаких запретных
+						| 						методов - накрутки, ссылки и т.п - это всё не про нас, 
+						span мы работаем в "белую"  
+						| , по этому клиенты работающие с нами не переживают за наложение фильтров и потерю позиций.
+	section#example.example
+		#scene3.scene
+			.scene-double(data-depth='0.4')
+			.scene-small(data-depth='0.6')
+			.scene-simple(data-depth='0.8')
+			.scene-small(data-depth='0.2')
+			.scene-double(data-depth='0.1')
+			.scene-simple(data-depth='0.9')
+		.steeps
+			.steeps-line__top.steeps-line
+			ul.steeps-list
+				li
+					a(href='#home') 01
+				li
+					a(href='#want') 02
+				li
+					a(href='#discount') 03
+				li
+					a(href='#services') 04
+				li
+					a(href='#about') 05
+				li.active
+					a(href='#example') 06
+				li
+					a(href='#call') 07
+			.steeps-line__bottom.steeps-line
+		span.bigtext.studio Studio 
+		.container
+			.title
+				.h2 Пример нашей работы
+				.title-triangle
+					img(src='https://palexweb.ru/static/img/assets/header/triangle.png')
+			.row
+				.col-xl-5.col-lg-12.order-xl-0.order-1
+					.example-left
+						.example-left__wrapper.active
+							.h3 Сайт по продаже бетононасосов и комплектующих к ним 
+							.example-items
+								.example-item
+									.h5 Цели:
+									ul.triangle-list
+										li Увеличить трафик и конверсию
+								.example-item
+									.h5 Что было сделано :
+									ul.triangle-list
+										li Редизайн сайта 
+										li Перенос контента 
+										li Сохранение позиции 
+										li Настройка директа 
+								.example-item
+									.h5 Результаты:
+									ul.triangle-list
+										li Увеличение конверсии с 1 до 4% 
+										li На 60% больше звонков и заявок в месяц 
+						.example-left__wrapper
+							.h3 Сайт по продаже сувенирной и рекламной продукции 
+							.example-items
+								.example-item
+									.h5 Цели:
+									ul.triangle-list
+										li Увеличить количесво заявок и звонков с сайта (обращений )
+								.example-item
+									.h5 Что было сделано :
+									ul.triangle-list
+										li Проведен анализ ниши и конкурентов 
+										li Редизайн сайта 
+										li Настроен директ и adwords 
+										li Seo продвижение 
+								.example-item
+									.h5 Результаты:
+									ul.triangle-list
+										li Увеличение конверсии с 0,5% до 4,5%
+										li Увеличение заявок и звонков 
+										li Увеличение среднего чека с 10 000 до 35 000 рублей 
+				.col-xl-7.col-lg-12.order-xl-1.order-0
+					.example-right
+						.apple-mockup
+							img(src='https://palexweb.ru/static/img/assets/example/apple.png' alt='Apple')
+							.apple-mockup__items
+								.apple-item__wrapper.active
+									.apple-mockup__item
+										img(src='https://palexweb.ru/uploads/cache/Portfolios/Portfolio4/ad6f7a3d1c-4_600x400.jpg' alt='')
+										img(src='https://palexweb.ru/uploads/cache/Portfolios/Portfolio4/fff548b61d-5_600x400.png' alt='')
+								.apple-item__wrapper
+									.apple-mockup__item
+										img(src='https://palexweb.ru/uploads/cache/Portfolios/Portfolio2/41480a1bf1-3_600x400.jpg' alt='')
+										img(src='https://palexweb.ru/uploads/cache/Portfolios/Portfolio2/76d331da5e-4_600x400.png' alt='')
+						.example-difference
+							span  Было
+							span  Стало
+						.apple-controller
+							.apple-controller__left
+								svg.svg-icons(width='13' height='13')
+									use(xlink:href='#left')
+							.apple-controller__right
+								svg.svg-icons(width='13' height='13')
+									use(xlink:href='#left')
+						.example-right__button
+							a.button-wrapper.popup-with-move-anim(href='#feedback-popup' data-message='Хочу также')
+								.button.command
+									span Хочу так же 
+	section#call.call
+		.steeps.steeps-dark
+			.steeps-line__top.steeps-line
+			ul.steeps-list
+				li
+					a(href='#home') 01
+				li
+					a(href='#want') 02
+				li
+					a(href='#discount') 03
+				li
+					a(href='#services') 04
+				li
+					a(href='#about') 05
+				li
+					a(href='#example') 06
+				li.active
+					a(href='#call') 07
+			.steeps-line__bottom.steeps-line
+		.container
+			.row
+				.col-12
+					.want-form.call-form
+						.want-form__content
+							.form-title
+								| Всё на что ты решился сейчас откликается
+								br
+								| успехом в будующем!
+							.form-subtitle Оставте заявку и мы свяжемся с Вами в ближайшее время
+							form#js-feedback-form-main.contact-form.form-feedback(action='/contact/default/send' method='post')
+								input(type='hidden' name='_csrf' value='PM-YFtjvU99ATzzy7QUhwnvuML3y4Npt8g5fpUPPxkV0oOFVqtsgqXIVXp-sX3e4HqJ98ZePrxWrb2nDG6C1Ag==')
+								.form-group.field-feedbackform-form_name
+									input#feedbackform-form_name.form-control(type='hidden' name='FeedbackForm[form_name]' value='Всё на что ты решился сейчас откликается успехом в будующем!')
+									.help-block
+								.form-column__row
+									.form-column
+										.form-row.single
+											.form-group.field-form-name__call.required
+												label.form-name(for='form-name__call')
+													i.material-icons.cl-accent person
+													| Ваше имя:
+												input#form-name__call.label-controll(type='text' name='FeedbackForm[name]' aria-required='true')
+												.help-block
+										.form-row.single
+											.form-group.create-che
+												.form-check
+													input#call_create_site.js-update-disabled.create-radio(type='radio' name='FeedbackForm[create]' value='Создание')
+													label(for='call_create_site') Создание
+												.form-check
+													input#call_redesign.js-update-disabled(type='radio' name='FeedbackForm[create]' value='Редизайн')
+													label(for='call_redesign') Редизайн
+												.form-check
+													input#call_context.js-update-disabled(type='radio' name='FeedbackForm[create]' value='Контекстная реклама')
+													label(for='call_context') Контекстная реклама
+												.form-check
+													input#call_promotion.js-update-disabled(type='radio' name='FeedbackForm[create]' value='Продвижение')
+													label(for='call_promotion') Продвижение
+									.form-column
+										.form-row
+											.form-group.field-phone__call.required
+												label.form-phone(for='form-phone__call')
+													i.material-icons.cl-accent phone
+													| Ваш телефон:
+												input#phone__call.label-controll(type='tel' name='FeedbackForm[phone]' aria-required='true')
+												.help-block
+											.form-group.field-form-mail__call
+												label.form-mail(for='form-mail__call')
+													i.material-icons.cl-accent mail
+													| Ваш email:
+												input#form-mail__call.label-controll(type='text' name='FeedbackForm[email]')
+												.help-block
+										.form-row.single.create-che-tematika.disbl
+											.form-group.field-phone__theme
+												label.form-phone(for='form-phone__theme')
+													i.material-icons.cl-accent phone
+													| Тематика:
+												input#phone__theme.label-controll(type='text' name='FeedbackForm[subject]')
+												.help-block
+										.form-row.single.create-che-site.disbl
+											.form-group.field-form-phone__current
+												label.form-phone(for='form-phone__current')
+													i.material-icons.cl-accent phone
+													| Текущий сайт:
+												input#form-phone__current.label-controll(type='text' name='FeedbackForm[site]')
+												.help-block
+										br
+										br
+										br
+										.form-group.field-ff2.required
+											.form-check
+												input#ff2.form-check(type='checkbox' name='FeedbackForm[accept]' checked='' aria-required='true')
+												label.control-label(for='ff2') Согласен с политикой конфиденциальности
+											.help-block
+									.form-column
+										.form-row.single
+											.form-group.form-group__textarea
+												label.form-comment(for='form-comment__call')
+													i.material-icons.cl-accent chat_bubble
+													span Ваш комментарий:
+												textarea#form-comment__call.label-controll(name='form-comment')
+										.form-row.center
+											button.ladda-button.button-wrapper(type='submit' data-style='slide-right')
+												.button.hoverblue
+													span Отправить
+	.content-page-description.container
+		.h3
+			p(align='CENTER')
+				font(size='4') STUDIO Palex Web Создание и продвижение сайтов любой сложности
+			p(align='JUSTIFY')
+				font(size='3') Интересует 
+				font(size='3')
+					b веб студия в Москве
+				font(size='3')
+					| ? Studio Palex Web – это команда ответственных и амбициозных профессионалов, чей успех зависит от успеха вашего будущего сайта. Каждый из сотрудников уже многого достиг, но не устал стремиться к лучшему. Собственный опыт работы в топовых веб-студиях России мы без лишних промедлений направим на решение ваших задач.
+			p(align='JUSTIFY')
+				a(name='_GoBack')
+				font(size='3')
+					| Находясь в разных городах и странах, мы объединили наши усилия ради общей цели –
+				font(size='3')
+					b создания и продвижения сайтов
+				font(size='3')  клиентов. Наша идея – перфекционизм. 
+				font(size='3')
+					b Веб компания 
+				font(size='3')
+					| Studio Palex Web существует, чтобы создавать лучший интеллектуальный продукт на рынке, оставаясь понятной и удобной для заказчиков.
+			p(align='JUSTIFY')
+				font(size='3')
+					| Мы увеличиваем скорость выполнения заказов и сокращаем цены, работая по системе SKRAM. Никаких лишних документов и расчетов. В живом общении истина рождается быстрее! Качественный продукт становится дешевле.
+			h2 Какие услуги мы предоставляем?
+			p(align='JUSTIFY')
+				font(size='3')
+					i
+						b Контекстная реклама
+			ul
+				li
+					p(align='JUSTIFY')
+						font(size='3') Анализ сайта и конкурентов 
+				li
+					p(align='JUSTIFY')
+						font(size='3') Сбор семантики
+				li
+					p(align='JUSTIFY')
+						font(size='3') Создание объявлений
+				li
+					p(align='JUSTIFY')
+						font(size='3') Расставление ставок
+				li
+					p(align='JUSTIFY')
+						font(size='3') Формирование стратегии
+				li
+					p(align='JUSTIFY')
+						font(size='3') Настройка РСЯ
+				li
+					p(align='JUSTIFY')
+						font(size='3') Анализ рабочего аккаунта
+				li
+					p(align='JUSTIFY')
+						font(size='3') Проверка и корректирование
+				li
+					p(align='JUSTIFY')
+						font(size='3') Сбор минус слов 
+				li
+					p(align='JUSTIFY')
+						font(size='3') и т.д
+			p(align='JUSTIFY')
+				font(size='3')
+					i
+						b Создание сайтов/Редизайн
+			ul
+				li
+					p(align='JUSTIFY')
+						font(size='3') Анализ ниши и конкурентов 
+				li
+					p(align='JUSTIFY')
+						font(size='3') Получение необходимой информации от заказчика
+				li
+					p(align='JUSTIFY')
+						font(size='3') Создание прототипов
+				li
+					p(align='JUSTIFY')
+						font(size='3') Разработка уникального дизайна
+				li
+					p(align='JUSTIFY')
+						font(size='3') Адаптивная верстка
+				li
+					p(align='JUSTIFY')
+						font(size='3') Программирование всех модулей
+				li
+					p(align='JUSTIFY')
+						font(size='3') Интеграция со сторонними ресурсами
+				li
+					p(align='JUSTIFY')
+						font(size='3') Обучение персонала заказчика управлению новым ресурсом
+				li
+					p(align='JUSTIFY')
+						font(size='3') Наполнение сайта
+				li
+					p(align='JUSTIFY')
+						font(size='3') Перенос на рабочий домен
+			p(align='JUSTIFY')
+				font(size='3')
+					i
+						b S
+				font(size='3')
+					i
+						b EO-
+				font(size='3')
+					i
+						b продвижение
+			p(align='JUSTIFY')  
+			ul
+				li
+					p(align='JUSTIFY')
+						font(size='3') Полный аудит сайта с выявлением ошибок/слабых сторон
+				li
+					p(align='JUSTIFY')
+						font(size='3') Формирование семантического ядра
+				li
+					p(align='JUSTIFY')
+						font(size='3') Анализ позиции фирмы заказчика на рынке
+				li
+					p(align='JUSTIFY')
+						font(size='3') Исправление выявленных ошибок
+				li
+					p(align='JUSTIFY')
+						font(size='3') Выполнение внутренней оптимизации
+				li
+					p(align='JUSTIFY')
+						font(size='3') Рерайт статей и написание нового контента
+				li
+					p(align='JUSTIFY')
+						font(size='3') Оптимизация скорости загрузки сайта
+				li
+					p(align='JUSTIFY')
+						font(size='3') Анализ поведения реальных посетителей
+				li
+					p(align='JUSTIFY')
+						font(size='3') Формирование рекомендаций по юзабилити
+				li
+					p(align='JUSTIFY')
+						font(size='3') Внешняя оптимизация 
+			h3 Почему вам понравится работать с нами?
+			p(align='JUSTIFY')
+				font(size='3')
+					b Разработка и продвижение сайтов
+				font(size='3')
+					| – многоплановый процесс. Работая над заказом, мы полностью погружаемся в бизнес клиента. Мы анализируем сильные и слабые стороны вашего бизнеса и сразу разрабатываем пути улучшения конкурентных позиций.
+			p(align='JUSTIFY')
+				font(size='3') Нами проводится оценка:
+			ul
+				li
+					p(align='JUSTIFY')
+						font(size='3') Деятельности ваших конкурентов.
+				li
+					p(align='JUSTIFY')
+						font(size='3') Выдачи посадочных страниц (по ключевым фразам).
+				li
+					p(align='JUSTIFY')
+						font(size='3') Эффективных маркетинговых шагов/спецпредложений со стороны конкурентов.
+				li
+					p(align='JUSTIFY')
+						font(size='3') УТП.
+				li
+					p(align='JUSTIFY')
+						font(size='3') Работы с юзабилити.
+			p(align='JUSTIFY')
+				font(size='3')
+					b Создание и раскрутка сайтов
+				font(size='3')
+					| выполняются только корректными методами – в «белую». Сотрудничая с нами, вы забудете о наложениях фильтров и потерях позиций. Мы не используем запрещенных способов продвижения в виде «накруток» и «ссылок». Сайты продвигаются и максимально адаптируются для удобства пользователей. Таким образом, все возможные доработки уже входят в стоимость
+				font(size='3') SEO
+				font(size='3') -разработки.
+			h3 Как мы работаем
+			p(align='JUSTIFY')
+				font(size='3') Вас заинтересовали 
+				font(size='3')
+					b услуги веб-студии
+				font(size='3')
+					| Studio Palex Web? Желаете узнать, как мы работаем? Начнем с небольшого примера с цифрами.
+			p(align='JUSTIFY')
+				font(size='3')
+					| Значительная часть заказчиков обращается к нам с просьбой об увеличении трафика и конверсии. Чтобы справиться с низкими показателями и повысить привлекательность сайта, будет сделано все необходимое:
+			ul
+				li
+					p(align='JUSTIFY')
+						font(size='3') Редизайн ресурса.
+				li
+					p(align='JUSTIFY')
+						font(size='3') Перенос контента.
+				li
+					p(align='JUSTIFY')
+						font(size='3') Сохранение позиции.
+				li
+					p(align='JUSTIFY')
+						font(size='3') На
+						font(size='3') стройка
+						font(size='3')  директа.
+			p(align='JUSTIFY')
+				font(size='3') В результате мы добиваемся:
+			ul
+				li
+					p(align='JUSTIFY')
+						font(size='3') Ускорения конверсии посетителей в покупателей с 1% до 4%.
+				li
+					p(align='JUSTIFY')
+						font(size='3') Увеличения ежемесячного количества клиентских звонков и заявок на 60%.
+			p(align='JUSTIFY')
+				font(size='3')
+					| По любому вопросу сотрудники компании Studio Palex Web работают слаженно и быстро. Мы ориентированы на долгое сотрудничество и доверительные отношения с заказчиками. Гарантируем качество, профессионализм и креатив. Не допустим – равнодушия к проекту клиента и шаблонных действий по его реализации.
+			p(align='JUSTIFY')
+				font(size='3')
+					| Чтобы связаться со специалистом нашей компании, достаточно позвонить по одному из телефонов, указанных на сайте Studio Palex Web. Вы также можете воспользоваться удобной формой онлайн заявки. Мы готовы работать!

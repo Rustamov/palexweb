@@ -1,0 +1,173 @@
+footer.footer
+	.container
+		.footer-wrapper
+			.footer-logo
+				a.logo(href='/')
+					svg.logo-svg(width='100%' height='52')
+						use(xlink:href='#logo')
+			.footer-menu
+				.footer-menu__title Страницы
+				ul
+					li.active
+						a(href='/') Главная
+					li
+						a(href='/service/sozdaniye-saytov-redizayn') Создание сайтов
+					li
+						a(href='/about') О компании 
+					li
+						a(href='/service/seo-prodvizheniye') Продвижение сайтов 
+					li
+						a(href='/service/kontekstnaya-reklama') Контекстная реклама 
+					li
+						a(href='/service/sotsial-nyye-seti') Реклама в социальных сетях 
+					li
+						a(href='/portfolio') Портфолио 
+					li
+						a(href='/contact') Контакты 
+			.footer-menu
+				.footer-menu__title Другие страницы
+				ul
+					li
+						a(href='/article') Статьи 
+			.footer-contacts
+				.footer-buttons
+					a.button-wrapper.popup-with-move-anim(href='#feedback-popup')
+						.button
+							span Оставить заявку 
+					a.button-wrapper(href='/uploads/store/Configs/Config42/brif_na_razrabotku_sayta.doc' download='')
+						.button
+							span скачать бриф 
+				.header-contact.same-location
+					.hexagon
+						i.material-icons.cl-accent phone
+					ul
+						li
+							a(href='tel:+7(977)544-30-51') +7(977)544-30-51
+						li
+							a(href='tel:+7(499) 649-53-57') +7(499) 649-53-57
+script(src='https://palexweb.ru/assets/941a39/jquery.min.js?v=1556745568')
+script(src='https://palexweb.ru/assets/cad5db50/yii.js?v=1560794855')
+script(src='https://palexweb.ru/assets/cad5db50/yii.validation.js?v=1560794855')
+script(src='https://palexweb.ru/assets/cad5db50/yii.activeForm.js?v=1560794855')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js')
+script(src='https://palexweb.ru/js/jquery.event.move.js?v=1560794094')
+script(src='https://palexweb.ru/js/popup/jquery.magnific-popup.min.js?v=1560794094')
+script(src='/static/js/main.js?v=1604430999')
+script(src='https://palexweb.ru/lib/alert/alertify.js?v=1560794094')
+script(src='https://palexweb.ru/js/frontend/application.js?v=1591688341')
+script(src='https://palexweb.ru/lib/submit-loader/spin.js?v=1560794094')
+script(src='https://palexweb.ru/lib/submit-loader/ladda.js?v=1560794094')
+script.
+	jQuery(function ($) {
+	jQuery('#js-feedback-form-create').yiiActiveForm([{"id":"feedbackform-form_name","name":"form_name","container":".field-feedbackform-form_name","input":"#feedbackform-form_name","validate":function (attribute, value, messages, deferred, $form) {yii.validation.string(value, messages, {"message":"Значение «Form Name» должно быть строкой.","skipOnEmpty":1});}},{"id":"feedbackform-name","name":"name","container":".field-form-name","input":"#form-name","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Имя»."});}},{"id":"feedbackform-phone","name":"phone","container":".field-form-phone","input":"#form-phone","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Телефон»."});yii.validation.regularExpression(value, messages, {"pattern":/^((8|\\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{3,10}$/,"not":false,"message":"Неправильный формат","skipOnEmpty":1});yii.validation.string(value, messages, {"message":"Значение «Телефон» должно быть строкой.","skipOnEmpty":1});}},{"id":"feedbackform-email","name":"email","container":".field-form-mail","input":"#form-mail","validate":function (attribute, value, messages, deferred, $form) {yii.validation.email(value, messages, {"pattern":/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,"fullPattern":/^[^@]*<[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/,"allowName":false,"message":"Значение «Email» не является правильным email адресом.","enableIDN":false,"skipOnEmpty":1});}},{"id":"feedbackform-accept","name":"accept","container":".field-feedbackform-accept","input":"#feedbackform-accept","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Установите галочку"});}}], []);
+	jQuery('#js-feedback-form-redesign').yiiActiveForm([{"id":"feedbackform-form_name","name":"form_name","container":".field-feedbackform-form_name","input":"#feedbackform-form_name","validate":function (attribute, value, messages, deferred, $form) {yii.validation.string(value, messages, {"message":"Значение «Form Name» должно быть строкой.","skipOnEmpty":1});}},{"id":"feedbackform-name","name":"name","container":".field-form-name__promotion","input":"#form-name__promotion","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Имя»."});}},{"id":"feedbackform-phone","name":"phone","container":".field-form-phone__promotion","input":"#form-phone__promotion","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Телефон»."});yii.validation.regularExpression(value, messages, {"pattern":/^((8|\\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{3,10}$/,"not":false,"message":"Неправильный формат","skipOnEmpty":1});yii.validation.string(value, messages, {"message":"Значение «Телефон» должно быть строкой.","skipOnEmpty":1});}},{"id":"feedbackform-email","name":"email","container":".field-form-mail__promotion","input":"#form-mail__promotion","validate":function (attribute, value, messages, deferred, $form) {yii.validation.email(value, messages, {"pattern":/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,"fullPattern":/^[^@]*<[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/,"allowName":false,"message":"Значение «Email» не является правильным email адресом.","enableIDN":false,"skipOnEmpty":1});}},{"id":"feedbackform-accept","name":"accept","container":".field-ff6","input":"#ff6","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Установите галочку"});}}], []);
+	jQuery('#js-feedback-form-redesign2').yiiActiveForm([{"id":"feedbackform-form_name","name":"form_name","container":".field-feedbackform-form_name","input":"#feedbackform-form_name","validate":function (attribute, value, messages, deferred, $form) {yii.validation.string(value, messages, {"message":"Значение «Form Name» должно быть строкой.","skipOnEmpty":1});}},{"id":"feedbackform-name","name":"name","container":".field-form-name__discount","input":"#form-name__discount","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Имя»."});}},{"id":"feedbackform-phone","name":"phone","container":".field-form-phone__discount","input":"#form-phone__discount","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Телефон»."});yii.validation.regularExpression(value, messages, {"pattern":/^((8|\\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{3,10}$/,"not":false,"message":"Неправильный формат","skipOnEmpty":1});yii.validation.string(value, messages, {"message":"Значение «Телефон» должно быть строкой.","skipOnEmpty":1});}},{"id":"feedbackform-email","name":"email","container":".field-form-mail__discount","input":"#form-mail__discount","validate":function (attribute, value, messages, deferred, $form) {yii.validation.email(value, messages, {"pattern":/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,"fullPattern":/^[^@]*<[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/,"allowName":false,"message":"Значение «Email» не является правильным email адресом.","enableIDN":false,"skipOnEmpty":1});}},{"id":"feedbackform-accept","name":"accept","container":".field-ff7","input":"#ff7","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Установите галочку"});}}], []);
+	jQuery('#js-feedback-form-main').yiiActiveForm([{"id":"feedbackform-form_name","name":"form_name","container":".field-feedbackform-form_name","input":"#feedbackform-form_name","validate":function (attribute, value, messages, deferred, $form) {yii.validation.string(value, messages, {"message":"Значение «Form Name» должно быть строкой.","skipOnEmpty":1});}},{"id":"feedbackform-name","name":"name","container":".field-form-name__call","input":"#form-name__call","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Имя»."});}},{"id":"feedbackform-phone","name":"phone","container":".field-phone__call","input":"#phone__call","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Телефон»."});yii.validation.regularExpression(value, messages, {"pattern":/^((8|\\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{3,10}$/,"not":false,"message":"Неправильный формат","skipOnEmpty":1});yii.validation.string(value, messages, {"message":"Значение «Телефон» должно быть строкой.","skipOnEmpty":1});}},{"id":"feedbackform-email","name":"email","container":".field-form-mail__call","input":"#form-mail__call","validate":function (attribute, value, messages, deferred, $form) {yii.validation.email(value, messages, {"pattern":/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,"fullPattern":/^[^@]*<[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/,"allowName":false,"message":"Значение «Email» не является правильным email адресом.","enableIDN":false,"skipOnEmpty":1});}},{"id":"feedbackform-accept","name":"accept","container":".field-ff2","input":"#ff2","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Установите галочку"});}}], []);
+	jQuery('#js-feedback-form-popup').yiiActiveForm([{"id":"feedbackform-form_name","name":"form_name","container":".field-feedbackform-form_name","input":"#feedbackform-form_name","validate":function (attribute, value, messages, deferred, $form) {yii.validation.string(value, messages, {"message":"Значение «Form Name» должно быть строкой.","skipOnEmpty":1});}},{"id":"feedbackform-name","name":"name","container":".field-form-name__discount","input":"#form-name__discount","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Имя»."});}},{"id":"feedbackform-phone","name":"phone","container":".field-form-phone__discount","input":"#form-phone__discount","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Телефон»."});yii.validation.regularExpression(value, messages, {"pattern":/^((8|\\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{3,10}$/,"not":false,"message":"Неправильный формат","skipOnEmpty":1});yii.validation.string(value, messages, {"message":"Значение «Телефон» должно быть строкой.","skipOnEmpty":1});}},{"id":"feedbackform-email","name":"email","container":".field-form-mail__discount","input":"#form-mail__discount","validate":function (attribute, value, messages, deferred, $form) {yii.validation.email(value, messages, {"pattern":/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/,"fullPattern":/^[^@]*<[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?>$/,"allowName":false,"message":"Значение «Email» не является правильным email адресом.","enableIDN":false,"skipOnEmpty":1});}},{"id":"feedbackform-accept","name":"accept","container":".field-ff4","input":"#ff4","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Установите галочку"});}}], []);
+	jQuery('#js-feedback-form-popup2').yiiActiveForm([{"id":"feedbackform-form_name","name":"form_name","container":".field-feedbackform-form_name","input":"#feedbackform-form_name","validate":function (attribute, value, messages, deferred, $form) {yii.validation.string(value, messages, {"message":"Значение «Form Name» должно быть строкой.","skipOnEmpty":1});}},{"id":"feedbackform-name","name":"name","container":".field-form-name__discount","input":"#form-name__discount","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Имя»."});}},{"id":"feedbackform-phone","name":"phone","container":".field-form-phone__discount","input":"#form-phone__discount","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Телефон»."});yii.validation.regularExpression(value, messages, {"pattern":/^((8|\\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{3,10}$/,"not":false,"message":"Неправильный формат","skipOnEmpty":1});yii.validation.string(value, messages, {"message":"Значение «Телефон» должно быть строкой.","skipOnEmpty":1});}},{"id":"feedbackform-accept","name":"accept","container":".field-ff3","input":"#ff3","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Установите галочку"});}}], []);
+	});
+#feedback-popup.white-popup.zoom-anim-dialog.mfp-hide
+	.want-form.oracle-form
+		.want-form__content
+			.form-title Обратная связь
+			.form-subtitle Оставте заявку и мы свяжемся с Вами в ближайшее время
+			form#js-feedback-form-popup.contact-form.form-feedback(action='/contact/default/send' method='post')
+				input(type='hidden' name='_csrf' value='PM-YFtjvU99ATzzy7QUhwnvuML3y4Npt8g5fpUPPxkV0oOFVqtsgqXIVXp-sX3e4HqJ98ZePrxWrb2nDG6C1Ag==')
+				.form-group.field-feedbackform-form_name
+					input#feedbackform-form_name.form-control(type='hidden' name='FeedbackForm[form_name]' value='Обратная связь')
+					.help-block
+				.form-group.field-check
+					input#check.form-control(type='hidden' name='FeedbackForm[check]' value='')
+					.help-block
+				.form-row
+					.form-group.field-form-name__discount.required
+						label.form-name(for='form-name__discount')
+							i.material-icons.cl-accent person
+							| Ваше имя:
+						input#form-name__discount.label-controll(type='text' name='FeedbackForm[name]' aria-required='true')
+						.help-block
+					.form-group.field-form-phone__discount.required
+						label.form-name(for='form-phone__discount')
+							i.material-icons.cl-accent phone
+							| Ваш телефон:
+						input#form-phone__discount.label-controll(type='tel' name='FeedbackForm[phone]' aria-required='true')
+						.help-block
+				.form-row.single
+					.form-group.field-form-mail__discount
+						label.form-mail(for='form-mail__discount')
+							i.material-icons.cl-accent mail
+							| Ваш email:
+						input#form-mail__discount.label-controll(type='email' name='FeedbackForm[email]')
+						.help-block
+					input#feedback-extra-input(type='hidden' name='FeedbackForm[body]')
+				.form-group.field-ff4.required
+					.form-check
+						input#ff4.form-check(type='checkbox' name='FeedbackForm[accept]' checked='' aria-required='true')
+						label.control-label(for='ff4') Согласен с политикой конфиденциальности
+					.help-block
+				.form-row.center
+					button.ladda-button.button-wrapper(type='submit' data-style='slide-right' onclick="document.getElementById('check').value = 'nospam';")
+						.button.hoverblue
+							span Отправить
+#feedback-popup-message.white-popup.zoom-anim-dialog.mfp-hide
+	.want-form.oracle-form
+		.want-form__content
+			.form-title Обратная связь
+			.form-subtitle Оставте заявку и мы свяжемся с Вами в ближайшее время
+			form#js-feedback-form-popup2.contact-form.form-feedback(action='/contact/default/send' method='post')
+				input(type='hidden' name='_csrf' value='PM-YFtjvU99ATzzy7QUhwnvuML3y4Npt8g5fpUPPxkV0oOFVqtsgqXIVXp-sX3e4HqJ98ZePrxWrb2nDG6C1Ag==')
+				.form-group.field-feedbackform-form_name
+					input#feedbackform-form_name.form-control(type='hidden' name='FeedbackForm[form_name]' value='Обратная связь')
+					.help-block
+				.form-group.field-check
+					input#check.form-control(type='hidden' name='FeedbackForm[check]' value='')
+					.help-block
+				.form-row
+					.form-group.field-form-name__discount.required
+						label.form-name(for='form-name__discount')
+							i.material-icons.cl-accent person
+							| Ваше имя:
+						input#form-name__discount.label-controll(type='text' name='FeedbackForm[name]' aria-required='true')
+						.help-block
+					.form-group.field-form-phone__discount.required
+						label.form-name(for='form-phone__discount')
+							i.material-icons.cl-accent phone
+							| Ваш телефон:
+						input#form-phone__discount.label-controll(type='tel' name='FeedbackForm[phone]' aria-required='true')
+						.help-block
+				.form-row.single
+					.form-group
+						label.form-comment(for='form-comment')
+							i.material-icons.cl-accent chat_bubble
+							span Ваш комментарий:
+						textarea#form-comment.label-controll(name='FeedbackForm[body]')
+				.form-group.field-ff3.required
+					.form-check
+						input#ff3.form-check(type='checkbox' name='FeedbackForm[accept]' checked='' aria-required='true')
+						label.control-label(for='ff3') Согласен с политикой конфиденциальности
+					.help-block
+				.form-row.center
+					button.ladda-button.button-wrapper(type='submit' data-style='slide-right' onclick="document.getElementById('check').value = 'nospam';")
+						.button.hoverblue
+							span Отправить
+#action
+	a.action-phone(href='tel:+7(977)544-30-51')
+		img(src='/static/img/assets/action/phone.svg' alt='')
+	a.action-mail.popup-with-move-anim(href='#feedback-popup-message')
+		img(src='/static/img/assets/action/mail.svg' alt='')
+//- // Yandex.Metrika counter
+//- script(type='text/javascript').
+//- 	(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+//- 	m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+//- 	(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+//- 	ym(54102850, "init", {
+//- 	clickmap:true,
+//- 	trackLinks:true,
+//- 	accurateTrackBounce:true,
+//- 	webvisor:true
+//- 	});
+noscript
+	div
+//- 		img(src='https://mc.yandex.ru/watch/54102850' style='position:absolute; left:-9999px;' alt='')
+//- // /Yandex.Metrika counter
+a.whatsapp-link(href='https://api.whatsapp.com/send?phone=79775443051') Написать в whatsapp
